@@ -1,0 +1,42 @@
+{
+  "experimento": "practica-1b",
+  "semilla_raiz": 221201513,
+  "subflujo": "Random(f'221201513:p1:aprendizaje:{n}:{repeticion}:{fase}:{fuente}')",
+  "fases": [
+    "entrenamiento",
+    "evaluacion"
+  ],
+  "fuentes": [
+    "puntos",
+    "ruido"
+  ],
+  "objetivo": {
+    "inicio": 4.71238898038469,
+    "fin": 1.5707963267948966,
+    "tipo": "arco"
+  },
+  "distribucion": "ángulos uniformes en [0, 2*pi)",
+  "ruido": 0.1,
+  "convencion_ruido": "inversiones Bernoulli independientes en ambas fases",
+  "tamanos": [
+    10,
+    20,
+    50,
+    100,
+    200,
+    500,
+    1000,
+    2000
+  ],
+  "repeticiones": 30,
+  "datos_evaluacion_por_repeticion": 10000,
+  "delta": 0.05,
+  "cota_principal": "P1 con m(2n)=2n(2n-1)+2, sin recortar a 1",
+  "erm": "exacto, bloque circular de peso máximo, O(n log n)",
+  "desempate": "menos puntos distintos positivos; menor indice inicial ordenado",
+  "extremos": "puntos extremos del bloque, incluidos; vacío y completo explícitos",
+  "python": "3.14.9",
+  "matplotlib": "3.11.2",
+  "segundos_experimento_y_tablas": 7.960928082999089,
+  "segundos_total": 10.203432424999846
+}

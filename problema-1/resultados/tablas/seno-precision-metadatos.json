@@ -1,0 +1,21 @@
+{
+  "experimento": "practica-1ci",
+  "semilla_raiz": 221201513,
+  "subflujo": "Random(f'221201513:p1:seno:precision:{m}:{repeticion}')",
+  "etiquetas": "+1 si getrandbits(1)==1, -1 en otro caso",
+  "m_max": 25,
+  "casos_por_m": 200,
+  "vectores_comprobados": 5000,
+  "etiquetas_individuales": 65000,
+  "primer_m_con_fallo_observado": 16,
+  "ruta_float64": "suma en float, omega=math.pi*S, x=10.0**(-i), math.sin(omega*x)",
+  "ruta_exacta": "N entero, Fraction(N,10**i)%2; signo según fase en (0,1) o (1,2)",
+  "signo_cero": 1,
+  "precision_exacta": "enteros y fracciones sin redondeo; no se aproxima pi",
+  "python": "3.14.9",
+  "plataforma": "Linux-7.2.14-arch1-1-x86_64-with-glibc2.44",
+  "mantisa_float_bits": 53,
+  "matplotlib": "3.11.2",
+  "segundos_calculo_y_tablas": 1.738999800001693,
+  "segundos_total": 3.6120110350002506
+}

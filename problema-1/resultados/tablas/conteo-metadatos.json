@@ -1,0 +1,15 @@
+{
+  "experimento": "practica-1a",
+  "semilla_raiz": 221201513,
+  "subflujo": "random.Random(f'{semilla_raiz}:p1:conteo:{n}:{acomodo}')",
+  "generador": "random.Random, semilla de texto versión 2",
+  "distribucion": "ángulos uniformes en [0, 2*pi), puntos distintos",
+  "n_max": 12,
+  "acomodos_por_n": 100,
+  "etiquetaciones_revisadas": 819000,
+  "python": "3.14.9",
+  "matplotlib": "3.11.2",
+  "motor_grafico": "Agg",
+  "segundos_conteo_y_tablas": 19.422852943998805,
+  "segundos_total": 25.848356369999237
+}

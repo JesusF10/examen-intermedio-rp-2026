@@ -1,0 +1,89 @@
+variable,modelo,umbral,coeficiente
+fixed acidity,ordinal,común,0.17371213636326893
+volatile acidity,ordinal,común,-0.45616712041771257
+citric acid,ordinal,común,0.07235835829554461
+residual sugar,ordinal,común,1.0088036882402032
+chlorides,ordinal,común,-0.028091444629955234
+free sulfur dioxide,ordinal,común,0.27837617561734346
+total sulfur dioxide,ordinal,común,-0.05057961824157304
+density,ordinal,común,-1.2786360995605053
+pH,ordinal,común,0.34810513432170404
+sulphates,ordinal,común,0.19596119085135927
+alcohol,ordinal,común,0.6267187410063573
+fixed acidity,binario,3,-1.4007021294765876
+volatile acidity,binario,3,-0.3975961517223408
+citric acid,binario,3,0.3492491361471025
+residual sugar,binario,3,-0.31712008951616005
+chlorides,binario,3,-0.3205900380379229
+free sulfur dioxide,binario,3,-0.98088940589317
+total sulfur dioxide,binario,3,0.8576508052325643
+density,binario,3,0.4427538527467827
+pH,binario,3,-0.6295236969780026
+sulphates,binario,3,0.13649132330688754
+alcohol,binario,3,0.6379387974174499
+fixed acidity,binario,4,-0.20763878180004555
+volatile acidity,binario,4,-0.6491194378298022
+citric acid,binario,4,0.03940347008743367
+residual sugar,binario,4,1.333709555707948
+chlorides,binario,4,0.0776544424699577
+free sulfur dioxide,binario,4,0.026254813428703557
+total sulfur dioxide,binario,4,0.3551223186733215
+density,binario,4,-1.0676994939341464
+pH,binario,4,-0.03075802544301261
+sulphates,binario,4,0.09354664389412568
+alcohol,binario,4,0.28385091320218137
+fixed acidity,binario,5,-0.02087714906731086
+volatile acidity,binario,5,-0.6021744305795903
+citric acid,binario,5,0.04754978335483373
+residual sugar,binario,5,0.5992376866966067
+chlorides,binario,5,-0.006265983905493313
+free sulfur dioxide,binario,5,0.2181752255975129
+total sulfur dioxide,binario,5,-0.04473847769724067
+density,binario,5,-0.5582034491880216
+pH,binario,5,0.18756208996788035
+sulphates,binario,5,0.19823358036646155
+alcohol,binario,5,1.0494154750779137
+fixed acidity,binario,6,0.5492001035957443
+volatile acidity,binario,6,-0.31382637746821634
+citric acid,binario,6,0.07160096415880554
+residual sugar,binario,6,1.4585232923649567
+chlorides,binario,6,-0.4298675054197836
+free sulfur dioxide,binario,6,0.28567016272227214
+total sulfur dioxide,binario,6,-0.138043656508023
+density,binario,6,-2.1356983879038607
+pH,binario,6,0.6447609760136865
+sulphates,binario,6,0.2526115608973772
+alcohol,binario,6,0.1377269222114153
+fixed acidity,binario,7,0.5890913765053125
+volatile acidity,binario,7,-0.024751660362919578
+citric acid,binario,7,0.20034525077363854
+residual sugar,binario,7,1.780127786416253
+chlorides,binario,7,-0.34252701814573244
+free sulfur dioxide,binario,7,0.3996442213134698
+total sulfur dioxide,binario,7,-0.20347534979198537
+density,binario,7,-2.3644526952694505
+pH,binario,7,0.7037839983226054
+sulphates,binario,7,0.09891983732473454
+alcohol,binario,7,0.05960640584820902
+fixed acidity,binario,8,5.14130629977511
+volatile acidity,binario,8,-0.9628264198173019
+citric acid,binario,8,0.6413706619314353
+residual sugar,binario,8,5.712523538444059
+chlorides,binario,8,-5.900626661416814
+free sulfur dioxide,binario,8,0.22313689295298375
+total sulfur dioxide,binario,8,0.32184221996788454
+density,binario,8,-7.886373625984779
+pH,binario,8,4.873558449470782
+sulphates,binario,8,-0.39369920438477035
+alcohol,binario,8,-0.8454034223811361
+fixed acidity,ordinal_cv,común,0.004487046850470277
+volatile acidity,ordinal_cv,común,-0.43732075314379293
+citric acid,ordinal_cv,común,0.0647168934925932
+residual sugar,ordinal_cv,común,0.5280282105990951
+chlorides,ordinal_cv,común,-0.0680133118680857
+free sulfur dioxide,ordinal_cv,común,0.28343310978526653
+total sulfur dioxide,ordinal_cv,común,-0.0853803185480744
+density,ordinal_cv,común,-0.557178659339372
+pH,ordinal_cv,común,0.20865736037192378
+sulphates,ordinal_cv,común,0.14958806446150386
+alcohol,ordinal_cv,común,0.8870770979761677

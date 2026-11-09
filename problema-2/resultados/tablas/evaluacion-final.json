@@ -1,0 +1,9 @@
+{
+  "ganador_mae": "M5",
+  "ganador_exactitud": "M4",
+  "ganador_qwk": "M5",
+  "fraccion_violaciones_M6_antes_PAVA": 0.017154389505549948,
+  "tolerancia_violaciones": 1e-12,
+  "n_prueba": 991,
+  "mejor_boosting_seleccionado_antes_de_prueba": "M6"
+}

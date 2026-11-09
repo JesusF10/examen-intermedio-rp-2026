@@ -1,0 +1,17 @@
+{
+  "modelo": "M5",
+  "parametros_fijados": {
+    "hojas": 15
+  },
+  "cuatro_variables": [
+    "alcohol",
+    "volatile acidity",
+    "free sulfur dioxide",
+    "density"
+  ],
+  "origen_importancia": "validación interna de entrenamiento, tres folds y cinco permutaciones",
+  "caracter": "descriptivo posterior al ranking final; no se ajusta ningún hiperparámetro",
+  "n_observaciones_prueba_usadas_aqui": 0,
+  "modelos_finales_sin_cambios": true,
+  "segundos": 9.044485960999737
+}

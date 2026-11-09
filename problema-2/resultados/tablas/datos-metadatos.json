@@ -1,0 +1,35 @@
+{
+  "fuente": "https://archive.ics.uci.edu/static/public/186/wine+quality.zip",
+  "semilla": 221201513,
+  "filas_originales": 4898,
+  "filas": 3961,
+  "atributos": [
+    "fixed acidity",
+    "volatile acidity",
+    "citric acid",
+    "residual sugar",
+    "chlorides",
+    "free sulfur dioxide",
+    "total sulfur dioxide",
+    "density",
+    "pH",
+    "sulphates",
+    "alcohol"
+  ],
+  "niveles": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "sha256_zip": "3ed56667f4b828242bd732d7d1dd7f2861e54432239d7fa63877014cbb0304d4",
+  "sha256_csv": "76c3f809815c17c07212622f776311faeb31e87610d52c26d87d6e361b169836",
+  "entrenamiento": 2970,
+  "prueba": 991,
+  "duplicados_exactos": 937,
+  "politica_duplicados": "eliminar filas idénticas antes de dividir; conservar primera aparición",
+  "recodificacion": "ninguna: calidad 3..9; índices 0..6 solo internos al ordinal"
+}

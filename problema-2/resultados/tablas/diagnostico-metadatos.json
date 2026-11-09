@@ -1,0 +1,50 @@
+{
+  "mejor_boosting_cv": "M6",
+  "parametros": {
+    "hojas": 7
+  },
+  "cuatro_variables": [
+    "alcohol",
+    "volatile acidity",
+    "free sulfur dioxide",
+    "residual sugar"
+  ],
+  "origen_importancia": "tres folds de entrenamiento, cinco permutaciones por fold",
+  "caracter": "descriptivo tras elegir hiperparámetros; no estimación final sin sesgo",
+  "modelo_ordinal_diagnostico": "sin penalizar, estandarización de todo entrenamiento",
+  "binarios": "C=infinito, sin penalizar, mismo escalado; P(Y>k)",
+  "convergencia_binarios": [
+    {
+      "umbral": 3,
+      "iteraciones": 41,
+      "positivos": 2955
+    },
+    {
+      "umbral": 4,
+      "iteraciones": 25,
+      "positivos": 2840
+    },
+    {
+      "umbral": 5,
+      "iteraciones": 23,
+      "positivos": 1959
+    },
+    {
+      "umbral": 6,
+      "iteraciones": 29,
+      "positivos": 618
+    },
+    {
+      "umbral": 7,
+      "iteraciones": 38,
+      "positivos": 102
+    },
+    {
+      "umbral": 8,
+      "iteraciones": 65,
+      "positivos": 4
+    }
+  ],
+  "n_prueba_usados": 0,
+  "segundos": 70.90517885000008
+}

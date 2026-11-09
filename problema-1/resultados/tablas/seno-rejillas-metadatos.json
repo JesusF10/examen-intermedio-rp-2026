@@ -1,0 +1,41 @@
+{
+  "experimento": "practica-1cii",
+  "semilla_raiz": 221201513,
+  "subflujo": "Random(f'221201513:p1:seno:rejillas:{n}:{fase}:{fuente}')",
+  "fases": [
+    "entrenamiento",
+    "evaluacion"
+  ],
+  "fuentes": [
+    "puntos",
+    "ruido"
+  ],
+  "objetivo": "signo(sin(6*pi*x))",
+  "distribucion": "uniforme en (0,1)",
+  "ruido": "Bernoulli 0.15 independiente en entrenamiento y evaluación",
+  "tamanos": [
+    20,
+    50,
+    200
+  ],
+  "limites": [
+    30,
+    300,
+    3000,
+    30000
+  ],
+  "paso_principal": 0.005,
+  "paso_sensibilidad": 0.0025,
+  "lote": 4096,
+  "evaluacion_por_n": 10000,
+  "mismas_muestras_para_todos_los_limites_y_pasos": true,
+  "signo_cero": 1,
+  "desempate": "menor omega; frecuencias crecientes",
+  "alcance_optimo": "exacto en la rejilla float64; aproximado respecto a (0,A] continuo",
+  "candidatos_por_n_principal": 6000000,
+  "python": "3.14.9",
+  "numpy": "2.5.4",
+  "matplotlib": "3.11.2",
+  "segundos_calculo_y_tablas": 191.67699512099898,
+  "segundos_total": 193.61337422399993
+}

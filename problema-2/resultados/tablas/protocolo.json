@@ -1,0 +1,170 @@
+{
+  "metrica_principal": "MAE",
+  "costos": "C(y,pred)=abs(y-pred)",
+  "escenario": "apoyo a revisión humana de calidad de vino; costo lineal por nivel",
+  "niveles": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "costos_matriz": [
+    [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    [
+      1,
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    [
+      2,
+      1,
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      3,
+      2,
+      1,
+      0,
+      1,
+      2,
+      3
+    ],
+    [
+      4,
+      3,
+      2,
+      1,
+      0,
+      1,
+      2
+    ],
+    [
+      5,
+      4,
+      3,
+      2,
+      1,
+      0,
+      1
+    ],
+    [
+      6,
+      5,
+      4,
+      3,
+      2,
+      1,
+      0
+    ]
+  ],
+  "semilla_raiz": 221201513,
+  "semilla_cv": 221201534,
+  "cv": 3,
+  "grilla": {
+    "M1": [
+      {}
+    ],
+    "M2": [
+      {
+        "C": 0.1
+      },
+      {
+        "C": 1.0
+      },
+      {
+        "C": 10.0
+      }
+    ],
+    "M3_moda": [
+      {
+        "alpha": 0.0
+      },
+      {
+        "alpha": 0.01
+      },
+      {
+        "alpha": 0.1
+      }
+    ],
+    "M3_mediana": [
+      {
+        "alpha": 0.0
+      },
+      {
+        "alpha": 0.01
+      },
+      {
+        "alpha": 0.1
+      }
+    ],
+    "M4": [
+      {
+        "hojas": 7
+      },
+      {
+        "hojas": 15
+      }
+    ],
+    "M5": [
+      {
+        "hojas": 7
+      },
+      {
+        "hojas": 15
+      }
+    ],
+    "M6": [
+      {
+        "hojas": 7
+      },
+      {
+        "hojas": 15
+      }
+    ]
+  },
+  "boosting": {
+    "max_iter": 150,
+    "learning_rate": 0.08,
+    "l2_regularization": 1.0,
+    "min_samples_leaf": 20,
+    "early_stopping": false
+  },
+  "M1_M5": "redondeo floor(pred+.5) y recorte a [3,9]",
+  "M6": "PAVA no creciente por fila; diferencias acumuladas y mediana inferior",
+  "variables_diagnostico": "cuatro mayores importancias por permutación MAE en folds de entrenamiento",
+  "permutaciones_por_fold": 5,
+  "test_usado_para_seleccion": false,
+  "atributos": [
+    "fixed acidity",
+    "volatile acidity",
+    "citric acid",
+    "residual sugar",
+    "chlorides",
+    "free sulfur dioxide",
+    "total sulfur dioxide",
+    "density",
+    "pH",
+    "sulphates",
+    "alcohol"
+  ],
+  "sha256_particion": "ae0572c79538673fe4fc3da8a9c038772535e7228c26d5eb0c037b1f9ccd0442"
+}

@@ -1,0 +1,47 @@
+{
+  "modelos": {
+    "M1": {
+      "parametros": {},
+      "mae_cv": 0.52996632996633
+    },
+    "M2": {
+      "parametros": {
+        "C": 0.1
+      },
+      "mae_cv": 0.5255892255892256
+    },
+    "M3_moda": {
+      "parametros": {
+        "alpha": 0.01
+      },
+      "mae_cv": 0.5296296296296297
+    },
+    "M3_mediana": {
+      "parametros": {
+        "alpha": 0.01
+      },
+      "mae_cv": 0.530976430976431
+    },
+    "M4": {
+      "parametros": {
+        "hojas": 7
+      },
+      "mae_cv": 0.507070707070707
+    },
+    "M5": {
+      "parametros": {
+        "hojas": 15
+      },
+      "mae_cv": 0.49158249158249157
+    },
+    "M6": {
+      "parametros": {
+        "hojas": 7
+      },
+      "mae_cv": 0.48619528619528624
+    }
+  },
+  "mejor_boosting_cv": "M6",
+  "segundos": 39.766413995999756,
+  "seleccion_solo_entrenamiento": true
+}

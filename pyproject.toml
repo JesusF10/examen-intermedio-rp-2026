@@ -4,7 +4,16 @@ version = "0.1.0"
 description = "Examen de Reconocimiento de Patrones"
 authors = [{ name = "Jesus Flores Lacarra" }]
 requires-python = ">=3.14.9,<3.15"
-dependencies = []
+dependencies = [
+    "joblib>=1.6.0",
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.4",
+    "pandas>=3.1.1",
+    "scikit-learn>=1.9.1",
+    "scipy>=1.18.1",
+    "statsmodels>=0.15.0",
+    "threadpoolctl>=3.8.0",
+]
 
 [dependency-groups]
 dev = ["ruff", "ty"]
@@ -25,6 +34,7 @@ indent-style = "space"
 
 [tool.ty.environment]
 python-version = "3.14"
+root = [".", "problema-1", "problema-1/src", "problema-2"]
 
 [tool.ty.src]
-include = ["problema-1/src", "problema-2/src"]
+include = ["problema-1/src", "problema-1/tests", "problema-2/src", "problema-2/tests", "problema-2/ejecutar.py"]
