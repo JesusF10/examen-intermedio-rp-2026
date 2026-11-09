@@ -98,9 +98,3 @@ El [README del problema 2](problema-2/README.md) documenta la eliminación de
 duplicados, la reserva de prueba, el protocolo MAE, las verificaciones y los
 resultados. Los datos y modelos locales no se versionan. Tras evaluar, las fases
 de selección quedan bloqueadas en esa carpeta; no se reajusta usando prueba.
-
-La revisión integral se ejecutó en una copia sin entorno, datos ni resultados
-previos: los experimentos completos reprodujeron las 17 tablas CSV (salvo tiempos),
-el contenido científico de 11 JSON y las 10 figuras originales byte a byte.
-Pasaron las 22 pruebas, Ruff, formato y ty. Esta comprobación corresponde al
-contenido local; la publicación y los permisos de GitHub son pasos de entrega.
