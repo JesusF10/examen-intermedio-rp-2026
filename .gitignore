@@ -218,3 +218,25 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Datos originales y derivados (se descargan desde código)
+/problema-2/datos/
+
+# Material local de redacción, fuentes LaTeX y documentos PDF
+/docs/
+/informe/
+*.tex
+*.bib
+*.pdf
+*.aux
+*.fls
+*.fdb_latexmk
+*.out
+*.toc
+*.bbl
+*.blg
+*.synctex.gz
+
+# Markdowns adicionales
+AGENTS.md
+CHANGELOG.md
