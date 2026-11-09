@@ -104,14 +104,3 @@ previos: los experimentos completos reprodujeron las 17 tablas CSV (salvo tiempo
 el contenido científico de 11 JSON y las 10 figuras originales byte a byte.
 Pasaron las 22 pruebas, Ruff, formato y ty. Esta comprobación corresponde al
 contenido local; la publicación y los permisos de GitHub son pasos de entrega.
-
-## Entrega y alcance
-
-El informe en PDF se entrega por Teams y la parte práctica mediante el repositorio
-de GitHub, que debe ser privado y dar acceso al profesor indicado en Teams.
-Los resultados se interpretan dentro de las distribuciones, rejillas y presupuestos
-documentados; no se extrapolan automáticamente a otras muestras.
-
-Se excluyen de Git los datos descargados, entornos, cachés, modelos locales,
-fuentes LaTeX, PDF y las carpetas locales de redacción. Los README y el código
-contienen lo necesario para ejecutar los experimentos sin esas notas.
