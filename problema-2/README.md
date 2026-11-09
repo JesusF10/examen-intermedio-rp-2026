@@ -1,6 +1,6 @@
 # Problema 2: Regresión ordinal con vino blanco
 
-Parte práctica (a)–(e) ejecutada; deducciones y bitácora en el informe local.
+Parte práctica (a)–(e) ejecutada.
 Semilla: **221201513**;
 a=3, b=1, vino blanco.
 
@@ -50,8 +50,8 @@ No se necesitan las notas locales ni el informe para ejecutar los experimentos.
 El código descarga el ZIP y lee winequality-white.csv y winequality.names.
 La descripción indica 11 atributos fisicoquímicos y calidad sensorial, mediana de
 al menos tres evaluaciones expertas. No hay faltantes. Referencia del origen:
-Cortez et al. (2009), *Modeling wine preferences by data mining from physicochemical
-properties*, Decision Support Systems 47(4), 547–553,
+Cortez et al. (2009), _Modeling wine preferences by data mining from physicochemical
+properties_, Decision Support Systems 47(4), 547–553,
 [DOI](https://doi.org/10.1016/j.dss.2009.05.016).
 
 Se hallaron 937 duplicados exactos entre 4898 filas y ningún perfil de atributos
@@ -66,15 +66,15 @@ el objetivo y perdería diferencias ordinales. División 75/25 estratificada,
 semilla 221201513:
 
 | Calidad | Originales | Sin duplicados | Entrenamiento | Prueba |
-| ---: | ---: | ---: | ---: | ---: |
-| 3 | 20 | 20 | 15 | 5 |
-| 4 | 163 | 153 | 115 | 38 |
-| 5 | 1457 | 1175 | 881 | 294 |
-| 6 | 2198 | 1788 | 1341 | 447 |
-| 7 | 880 | 689 | 516 | 173 |
-| 8 | 175 | 131 | 98 | 33 |
-| 9 | 5 | 5 | 4 | 1 |
-| Total | 4898 | 3961 | 2970 | 991 |
+| ------: | ---------: | -------------: | ------------: | -----: |
+|       3 |         20 |             20 |            15 |      5 |
+|       4 |        163 |            153 |           115 |     38 |
+|       5 |       1457 |           1175 |           881 |    294 |
+|       6 |       2198 |           1788 |          1341 |    447 |
+|       7 |        880 |            689 |           516 |    173 |
+|       8 |        175 |            131 |            98 |     33 |
+|       9 |          5 |              5 |             4 |      1 |
+|   Total |       4898 |           3961 |          2970 |    991 |
 
 niveles.csv, particion.csv y datos-metadatos.json registran conteos, índices
 originales y SHA256. El CSV original tiene SHA256
@@ -141,15 +141,15 @@ extremos, orden, normalización, moda/mediana, redondeo y corrección PAVA.
 
 Grillas acotadas por presupuesto, fijadas antes de prueba:
 
-| Modelo | Candidatos | Elegido | MAE CV |
-| --- | --- | --- | ---: |
-| M1 lineal | Sin hiperparámetros | Redondear y recortar | 0.52997 |
-| M2 multinomial | C=0.1,1,10 | C=0.1 | 0.52559 |
-| M3 moda | alpha=0,0.01,0.1 | alpha=0.01 | 0.52963 |
-| M3 mediana | alpha=0,0.01,0.1 | alpha=0.01 | 0.53098 |
-| M4 HGB clasificador | 7 o 15 hojas | 7 hojas | 0.50707 |
-| M5 HGB regresor | 7 o 15 hojas | 15 hojas | 0.49158 |
-| M6 seis HGB binarios | 7 o 15 hojas | 7 hojas | 0.48620 |
+| Modelo               | Candidatos          | Elegido              |  MAE CV |
+| -------------------- | ------------------- | -------------------- | ------: |
+| M1 lineal            | Sin hiperparámetros | Redondear y recortar | 0.52997 |
+| M2 multinomial       | C=0.1,1,10          | C=0.1                | 0.52559 |
+| M3 moda              | alpha=0,0.01,0.1    | alpha=0.01           | 0.52963 |
+| M3 mediana           | alpha=0,0.01,0.1    | alpha=0.01           | 0.53098 |
+| M4 HGB clasificador  | 7 o 15 hojas        | 7 hojas              | 0.50707 |
+| M5 HGB regresor      | 7 o 15 hojas        | 15 hojas             | 0.49158 |
+| M6 seis HGB binarios | 7 o 15 hojas        | 7 hojas              | 0.48620 |
 
 Boosting: 150 iteraciones, tasa .08, mínimo 20 datos por hoja, L2=1, sin parada
 temprana para evitar reservas internas con clases raras. M5 usa pérdida cuadrática.
@@ -163,15 +163,15 @@ por diferencias y se usa mediana inferior para MAE. PAVA no consulta etiquetas
 de evaluación. Restar q crudas podría producir probabilidades negativas; moda
 sería la alternativa para exactitud.
 
-| Modelo | Exactitud | MAE | QWK |
-| --- | ---: | ---: | ---: |
-| M1 | 0.52069 | 0.53986 | 0.40584 |
-| M2 | 0.53784 | 0.52472 | 0.42036 |
-| M3 moda | 0.52977 | 0.53280 | 0.39109 |
-| M3 mediana | 0.52573 | 0.53582 | 0.39487 |
-| M4 | **0.54188** | 0.51362 | 0.49940 |
-| M5 | 0.54087 | **0.50757** | **0.51582** |
-| M6 | 0.53582 | 0.51362 | 0.49983 |
+| Modelo     |   Exactitud |         MAE |         QWK |
+| ---------- | ----------: | ----------: | ----------: |
+| M1         |     0.52069 |     0.53986 |     0.40584 |
+| M2         |     0.53784 |     0.52472 |     0.42036 |
+| M3 moda    |     0.52977 |     0.53280 |     0.39109 |
+| M3 mediana |     0.52573 |     0.53582 |     0.39487 |
+| M4         | **0.54188** |     0.51362 |     0.49940 |
+| M5         |     0.54087 | **0.50757** | **0.51582** |
+| M6         |     0.53582 |     0.51362 |     0.49983 |
 
 M5 gana por MAE y QWK; M4 por exactitud, con **un vino más** que M5.
 M6, ganador en CV, no gana en prueba. Las diferencias son pequeñas; no se afirma
@@ -197,12 +197,12 @@ no constituyen una nueva selección.
 
 Para M5 se obtuvieron:
 
-| Variable | Aumento MAE al permutar | w ordinal sin penalizar | w ordinal CV |
-| --- | ---: | ---: | ---: |
-| alcohol | 0.12949 | 0.62672 | 0.88708 |
-| volatile acidity | 0.05125 | -0.45617 | -0.43732 |
-| free sulfur dioxide | 0.02956 | 0.27838 | 0.28343 |
-| density | 0.02290 | -1.27864 | -0.55718 |
+| Variable            | Aumento MAE al permutar | w ordinal sin penalizar | w ordinal CV |
+| ------------------- | ----------------------: | ----------------------: | -----------: |
+| alcohol             |                 0.12949 |                 0.62672 |      0.88708 |
+| volatile acidity    |                 0.05125 |                -0.45617 |     -0.43732 |
+| free sulfur dioxide |                 0.02956 |                 0.27838 |      0.28343 |
+| density             |                 0.02290 |                -1.27864 |     -0.55718 |
 
 Las seis logísticas binarias se ajustaron sin penalizar (C=np.inf) sobre el
 mismo escalado de entrenamiento del ordinal sin penalizar. La figura incluye

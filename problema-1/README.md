@@ -1,6 +1,6 @@
 # Problema 1: Arcos de la circunferencia unitaria
 
-Parte práctica (a)–(d) implementada y ejecutada, con resultados y reflexión documentados.
+Parte práctica (a)–(d) implementada y ejecutada.
 Semilla: 221201513.
 
 ## Código
@@ -74,7 +74,7 @@ sin depender de esa discretización. La versión de Python queda en los metadato
 En cada uno de los 1200 acomodos se evalúan **todas** las etiquetas con
 `itertools.product((-1, 1), repeat=n)`: 819000 evaluaciones en total. La fórmula
 `n*(n-1)+2` se usa solo como contraste posterior, no para sustituir la enumeración.
-El costo total es O(100 * sum(2^n * n log n, n=1..12)).
+El costo total es O(100 _ sum(2^n _ n log n, n=1..12)).
 
 Las rutas predeterminadas se resuelven desde el archivo del programa:
 
@@ -94,20 +94,20 @@ podría no encontrar un conjunto destrozado aunque existiera.
 La enumeración completa produjo mínimo y máximo idénticos en los 100 acomodos
 de cada tamaño:
 
-| n | Mínimo = máximo observado | 2^n | Sauer (d=3) |
-| ---: | ---: | ---: | ---: |
-| 1 | 2 | 2 | 2 |
-| 2 | 4 | 4 | 4 |
-| 3 | 8 | 8 | 8 |
-| 4 | 14 | 16 | 15 |
-| 5 | 22 | 32 | 26 |
-| 6 | 32 | 64 | 42 |
-| 7 | 44 | 128 | 64 |
-| 8 | 58 | 256 | 93 |
-| 9 | 74 | 512 | 130 |
-| 10 | 92 | 1024 | 176 |
-| 11 | 112 | 2048 | 232 |
-| 12 | 134 | 4096 | 299 |
+|   n | Mínimo = máximo observado |  2^n | Sauer (d=3) |
+| --: | ------------------------: | ---: | ----------: |
+|   1 |                         2 |    2 |           2 |
+|   2 |                         4 |    4 |           4 |
+|   3 |                         8 |    8 |           8 |
+|   4 |                        14 |   16 |          15 |
+|   5 |                        22 |   32 |          26 |
+|   6 |                        32 |   64 |          42 |
+|   7 |                        44 |  128 |          64 |
+|   8 |                        58 |  256 |          93 |
+|   9 |                        74 |  512 |         130 |
+|  10 |                        92 | 1024 |         176 |
+|  11 |                       112 | 2048 |         232 |
+|  12 |                       134 | 4096 |         299 |
 
 El conteo coincide con la fórmula exacta en todos los casos. Se separa de `2^n`
 en n=4, de acuerdo con dVC=3: las dos etiquetas alternantes de cuatro puntos
@@ -180,16 +180,16 @@ Las pruebas de ERM lo contrastan contra todos los pares de extremos geométricos
 para todas las etiquetas hasta siete puntos, además de repetidos y puntos cercanos.
 El comando de pruebas del inciso (a) ejecuta también estas pruebas.
 
-| n | Ein medio | Eout medio | Brecha media | Error estándar de brecha | Cota P1 |
-| ---: | ---: | ---: | ---: | ---: | ---: |
-| 10 | 0.05667 | 0.30753 | 0.25087 | 0.01631 | 2.87436 |
-| 20 | 0.09000 | 0.21557 | 0.12557 | 0.01542 | 2.16663 |
-| 50 | 0.08933 | 0.13573 | 0.04640 | 0.01034 | 1.47418 |
-| 100 | 0.09267 | 0.12336 | 0.03070 | 0.00548 | 1.09448 |
-| 200 | 0.09733 | 0.11067 | 0.01334 | 0.00335 | 0.80901 |
-| 500 | 0.10140 | 0.10538 | 0.00398 | 0.00247 | 0.53958 |
-| 1000 | 0.10037 | 0.10283 | 0.00247 | 0.00172 | 0.39581 |
-| 2000 | 0.09770 | 0.10033 | 0.00263 | 0.00125 | 0.28962 |
+|    n | Ein medio | Eout medio | Brecha media | Error estándar de brecha | Cota P1 |
+| ---: | --------: | ---------: | -----------: | -----------------------: | ------: |
+|   10 |   0.05667 |    0.30753 |      0.25087 |                  0.01631 | 2.87436 |
+|   20 |   0.09000 |    0.21557 |      0.12557 |                  0.01542 | 2.16663 |
+|   50 |   0.08933 |    0.13573 |      0.04640 |                  0.01034 | 1.47418 |
+|  100 |   0.09267 |    0.12336 |      0.03070 |                  0.00548 | 1.09448 |
+|  200 |   0.09733 |    0.11067 |      0.01334 |                  0.00335 | 0.80901 |
+|  500 |   0.10140 |    0.10538 |      0.00398 |                  0.00247 | 0.53958 |
+| 1000 |   0.10037 |    0.10283 |      0.00247 |                  0.00172 | 0.39581 |
+| 2000 |   0.09770 |    0.10033 |      0.00263 |                  0.00125 | 0.28962 |
 
 La brecha es `Eout-Ein`, sin valor absoluto ni truncamiento. Su error estándar
 es la desviación muestral de las 30 brechas dividida entre `sqrt(30)`; las barras
@@ -260,19 +260,19 @@ de sus puntos. Se guardan también los aciertos individuales y el número de
 coeficientes S que difieren del entero N. Se comprobaron 5000 vectores y
 65000 etiquetas individuales:
 
-| m | Vectores correctos float64 / 200 | Fracción float64 | Fracción exacta |
-| ---: | ---: | ---: | ---: |
-| 1–15 (cada m) | 200 | 1.000 | 1.000 |
-| 16 | 165 | 0.825 | 1.000 |
-| 17 | 100 | 0.500 | 1.000 |
-| 18 | 62 | 0.310 | 1.000 |
-| 19 | 40 | 0.200 | 1.000 |
-| 20 | 27 | 0.135 | 1.000 |
-| 21 | 15 | 0.075 | 1.000 |
-| 22 | 8 | 0.040 | 1.000 |
-| 23 | 3 | 0.015 | 1.000 |
-| 24 | 3 | 0.015 | 1.000 |
-| 25 | 5 | 0.025 | 1.000 |
+|             m | Vectores correctos float64 / 200 | Fracción float64 | Fracción exacta |
+| ------------: | -------------------------------: | ---------------: | --------------: |
+| 1–15 (cada m) |                              200 |            1.000 |           1.000 |
+|            16 |                              165 |            0.825 |           1.000 |
+|            17 |                              100 |            0.500 |           1.000 |
+|            18 |                               62 |            0.310 |           1.000 |
+|            19 |                               40 |            0.200 |           1.000 |
+|            20 |                               27 |            0.135 |           1.000 |
+|            21 |                               15 |            0.075 |           1.000 |
+|            22 |                                8 |            0.040 |           1.000 |
+|            23 |                                3 |            0.015 |           1.000 |
+|            24 |                                3 |            0.015 |           1.000 |
+|            25 |                                5 |            0.025 |           1.000 |
 
 ![Construcción P3: float64 frente a fases racionales exactas](resultados/figuras/seno-precision.png)
 
@@ -357,25 +357,25 @@ candidatos: se revisan 18000000 por n entre ambos pasos y 4860000000 productos/
 evaluaciones escalares del seno en la búsqueda. Los tiempos medidos por n y paso quedan
 en las tablas y los metadatos. No hay búsqueda heurística ni parada por Ein cero.
 
-| n | A | Omega elegido (paso 0.005) | Ein | Eout |
-| ---: | ---: | ---: | ---: | ---: |
-| 20 | 30 | 17.895 | 0.150 | 0.2410 |
-| 20 | 300 | 17.895 | 0.150 | 0.2410 |
-| 20 | 3000 | 602.980 | 0.100 | 0.5018 |
-| 20 | 30000 | 602.980 | 0.100 | 0.5018 |
-| 50 | 30 | 18.795 | 0.260 | 0.1547 |
-| 50 | 300 | 18.795 | 0.260 | 0.1547 |
-| 50 | 3000 | 2827.335 | 0.240 | 0.4976 |
-| 50 | 30000 | 21618.050 | 0.200 | 0.5045 |
-| 200 | 30 | 18.670 | 0.130 | 0.1621 |
-| 200 | 300 | 18.670 | 0.130 | 0.1621 |
-| 200 | 3000 | 18.670 | 0.130 | 0.1621 |
-| 200 | 30000 | 18.670 | 0.130 | 0.1621 |
+|   n |     A | Omega elegido (paso 0.005) |   Ein |   Eout |
+| --: | ----: | -------------------------: | ----: | -----: |
+|  20 |    30 |                     17.895 | 0.150 | 0.2410 |
+|  20 |   300 |                     17.895 | 0.150 | 0.2410 |
+|  20 |  3000 |                    602.980 | 0.100 | 0.5018 |
+|  20 | 30000 |                    602.980 | 0.100 | 0.5018 |
+|  50 |    30 |                     18.795 | 0.260 | 0.1547 |
+|  50 |   300 |                     18.795 | 0.260 | 0.1547 |
+|  50 |  3000 |                   2827.335 | 0.240 | 0.4976 |
+|  50 | 30000 |                  21618.050 | 0.200 | 0.5045 |
+| 200 |    30 |                     18.670 | 0.130 | 0.1621 |
+| 200 |   300 |                     18.670 | 0.130 | 0.1621 |
+| 200 |  3000 |                     18.670 | 0.130 | 0.1621 |
+| 200 | 30000 |                     18.670 | 0.130 | 0.1621 |
 
 El mínimo Ein no aumenta al ampliar A porque los candidatos anteriores siguen
 disponibles. Para 20 y 50 datos, los límites grandes permiten ajustar mejor las
 etiquetas ruidosas, mientras Eout se aproxima a 0.5: se observa sobreajuste.
-Para n=200, el mismo omega próximo a 6*pi se conserva en los cuatro límites y
+Para n=200, el mismo omega próximo a 6\*pi se conserva en los cuatro límites y
 Eout permanece cerca del piso 0.15. No se afirma que aumentar A siempre empeore
 Eout: son tres muestras concretas y no una curva promediada sobre repeticiones.
 Eout es una estimación Monte Carlo con 10000 datos, no el error poblacional exacto.
@@ -394,7 +394,7 @@ Limitar A actúa como regularización: restringe las oscilaciones disponibles y
 reduce las oportunidades de adaptar ruido. En estas rejillas de paso fijo,
 hay a lo sumo K=A/paso hipótesis, con dimensión VC no mayor que floor(log2 K).
 Esto no asigna esa dimensión a la clase continua o a la clase irrestricta del seno.
-Un A demasiado bajo también puede excluir frecuencias útiles; 6*pi está dentro
+Un A demasiado bajo también puede excluir frecuencias útiles; 6\*pi está dentro
 de todos los intervalos ensayados, aunque no es un nodo exacto de la rejilla.
 
 Salidas bajo `resultados/`: `tablas/seno-rejillas.csv` (12 filas principales),
@@ -459,11 +459,11 @@ Se recorren todos los enteros desde 1 hasta el primero que cumple el margen;
 se comprueban ese entero y el anterior con `decimal`, usando 50 dígitos.
 No se necesitan dependencias adicionales ni se usa aleatoriedad.
 
-| Sustitución de la función de crecimiento en 2n | Mínimo n | Veces la regla 10 dVC = 30 |
-| --- | ---: | ---: |
-| Suma de Sauer (resultado de P1 y P2) | 28341 | 944.70 |
-| Relajación de Sauer `(2*n+1)**3` | 29903 | 996.77 |
-| Conteo exacto de arcos `2*n*(2*n-1)+2` (comparación adicional) | 20500 | 683.33 |
+| Sustitución de la función de crecimiento en 2n                 | Mínimo n | Veces la regla 10 dVC = 30 |
+| -------------------------------------------------------------- | -------: | -------------------------: |
+| Suma de Sauer (resultado de P1 y P2)                           |    28341 |                     944.70 |
+| Relajación de Sauer `(2*n+1)**3`                               |    29903 |                     996.77 |
+| Conteo exacto de arcos `2*n*(2*n-1)+2` (comparación adicional) |    20500 |                     683.33 |
 
 Para la suma de Sauer, los márgenes en n=28340 y n=28341 son, respectivamente,
 0.10000112525608 y 0.09999951039574. El margen es decreciente: si
