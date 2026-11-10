@@ -1,6 +1,6 @@
 # Problema 2: Regresión ordinal con vino blanco
 
-Parte práctica (a)–(e) ejecutada y revisada por el autor.
+Parte práctica (a)–(e) ejecutada.
 Semilla: **221201513**;
 a=3, b=1, vino blanco.
 

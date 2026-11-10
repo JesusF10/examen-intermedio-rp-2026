@@ -1,4 +1,4 @@
-"""Diagnóstico descriptivo exclusivamente en entrenamiento, previo a prueba."""
+"""Diagnósticos en entrenamiento, antes y después de la evaluación de prueba."""
 
 import hashlib
 import json
@@ -200,7 +200,8 @@ def descriptivo_final() -> None:
     """Describe el mejor boosting final usando solamente entrenamiento.
 
     Conserva el diagnóstico preprueba y los modelos congelados. La elección del
-    modelo a describir usa el ranking ya publicado; no se vuelven a evaluar datos.
+    modelo a describir usa el ranking guardado. Solo se ajusta y evalúa con
+    entrenamiento; no se consulta prueba ni se alteran los modelos finales.
     """
     if not (DATOS / "test-evaluado.json").exists():
         raise RuntimeError("Se requiere la evaluación final ya guardada.")

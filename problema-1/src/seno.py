@@ -31,7 +31,7 @@ def coeficiente_exacto(etiquetas: Sequence[int]) -> int:
 
 
 def construir_float64(etiquetas: Sequence[int]) -> tuple[float, float]:
-    """Evalúa P3 directamente: potencias, suma y multiplicación en binary64."""
+    """Construye el coeficiente y la frecuencia de P3 directamente en binary64."""
     _validar_etiquetas(etiquetas)
     coeficiente = 1.0 + sum(
         float((1 - y) // 2) * 10.0**i for i, y in enumerate(etiquetas, 1)
@@ -50,7 +50,7 @@ def fases_exactas(coeficiente: int, m: int) -> list[Fraction]:
 
 
 def signo_fase(fase: Fraction) -> int:
-    """Signo del seno por cuadrante; no aproxima pi ni evalúa un seno flotante."""
+    """Signo de sin(pi*fase) por su fase racional, sin aproximar pi ni el seno."""
     fase %= 2
     if fase in (0, 1):
         return 1  # Convención signo(0)=+1; estos casos no aparecen en P3.

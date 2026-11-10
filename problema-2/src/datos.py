@@ -64,7 +64,7 @@ def preparar() -> None:
             "Prueba ya cerrada: no se permite sobrescribir su partición."
         )
     original = inspeccionar()
-    # Decisión previa a la partición: cada perfil exactamente repetido cuenta una vez.
+    # Antes de dividir, conservar una sola copia de cada fila idéntica.
     sin_repetidos = original.drop_duplicates()
     originales = sin_repetidos.index.to_numpy(dtype=np.int64)
     tabla = sin_repetidos.reset_index(drop=True)

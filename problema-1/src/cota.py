@@ -1,4 +1,4 @@
-"""Tamaño de muestra del inciso teórico 1(c), sin dependencias ni aleatoriedad."""
+"""Tamaño de muestra de teoría 1(c), con biblioteca estándar y sin aleatoriedad."""
 
 from collections.abc import Callable
 from decimal import Decimal, localcontext

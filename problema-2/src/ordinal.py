@@ -30,7 +30,8 @@ def nll_grad(
 ) -> tuple[float, Array]:
     """NLL media + alpha*||w||²/2 y gradiente respecto a (w,u).
 
-    theta_1=u_1 y theta_j=u_1+sum(exp(u_l), l=2..j). No hay intercepto en x.
+    y contiene índices de categoría 0..k-1; x no incluye intercepto.
+    Los umbrales son theta_1=u_1 y theta_j=u_1+sum(exp(u_l), l=2..j).
     """
     d, n = x.shape[1], len(y)
     w, u = parametros[:d], parametros[d:]

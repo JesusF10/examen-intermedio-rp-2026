@@ -62,6 +62,7 @@ def buscar_rejillas(
 
     Se recorre solo la rejilla mayor: las anteriores son sus prefijos. El costo
     es O(n*Amax/paso), con O(n*lote) de memoria y sin usar datos de evaluación.
+    La exactitud se refiere a la rejilla float64, no al intervalo continuo.
     """
     if not isfinite(paso) or paso <= 0 or lote < 1:
         raise ValueError("Paso finito positivo y lote positivo requeridos.")

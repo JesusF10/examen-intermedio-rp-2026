@@ -1,6 +1,6 @@
 # Problema 1: Arcos de la circunferencia unitaria
 
-Parte práctica (a)–(d) implementada, ejecutada y revisada por el autor.
+Parte práctica (a)–(d) implementada y ejecutada.
 Semilla: 221201513.
 
 ## Código

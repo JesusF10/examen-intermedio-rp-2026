@@ -103,7 +103,7 @@ def ejecutar(
                 n, repeticion, "evaluacion", evaluacion
             )
             eout = error(arco, x_eval, y_eval)
-            # El objetivo pertenece a H: un ERM no puede cometer más errores.
+            # En entrenamiento, el ERM no puede superar los errores del objetivo.
             if ein > cambios_train / n + 1e-15:
                 raise ArithmeticError("El ajuste supera el error del arco objetivo.")
             actuales.append(

@@ -10,7 +10,7 @@ from .datos import DATOS
 
 
 def verificar_cierre() -> bool:
-    """Comprueba integridad sin cargar modelos ni consultar observaciones de prueba."""
+    """Verifica huellas de modelos, selección y partición sin acceder a prueba."""
     marcador = DATOS / "test-evaluado.json"
     if not marcador.exists():
         return False
