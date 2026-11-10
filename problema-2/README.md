@@ -1,12 +1,12 @@
 # Problema 2: Regresión ordinal con vino blanco
 
-Parte práctica (a)–(e) ejecutada.
+Parte práctica (a)–(e) ejecutada y revisada por el autor.
 Semilla: **221201513**;
 a=3, b=1, vino blanco.
 
 ## Reproducción
 
-Desde la raíz, en un clon limpio, con Python 3.14.9 y uv:
+Desde la raíz del repositorio, con Python 3.14.9 y uv:
 
 ```sh
 uv run --locked python ejecutar.py problema-2
@@ -18,10 +18,11 @@ También se puede invocar directamente `uv run --locked python problema-2/ejecut
 
 Si prueba ya está cerrada, se verifican las huellas de modelos, selección y
 partición y se regeneran las figuras, sin volver a seleccionar ni evaluar prueba.
-Un diagnóstico final interrumpido se completa solo con entrenamiento. Una
-evaluación de prueba incompleta o una huella alterada detiene el flujo; para una
-reproducción independiente desde cero se conserva esa carpeta y se usa otra copia
-limpia. `preparar` también impide sobrescribir una partición con prueba cerrada.
+El flujo recupera el diagnóstico final tras una interrupción usando solo
+entrenamiento. Si detecta una interrupción durante la evaluación de prueba o una
+huella alterada, se detiene y conserva los archivos. La reproducción independiente
+desde cero se realiza en otra copia limpia. `preparar` también impide sobrescribir
+una partición con prueba cerrada.
 
 Los mismos pasos se pueden ejecutar individualmente, en este orden, en una copia
 limpia (no es necesario repetirlos después del comando anterior):
@@ -262,8 +263,8 @@ Los resultados aplican a perfiles únicos, no a la multiplicidad de las 4898 fil
 
 El ordinal sigue siendo útil por sus 17 parámetros identificables, interpretación
 y probabilidades coherentes. Sacrifica flexibilidad al imponer momios proporcionales;
-aquí boosting ajusta mejor bajo el criterio elegido. La recomendación es una
-propuesta sustentada por los resultados de este protocolo.
+aquí boosting ajusta mejor bajo el criterio elegido. La recomendación se limita
+al escenario, los datos y el presupuesto de validación documentados.
 
 ## Evidencias, versiones y tiempos
 
@@ -289,9 +290,10 @@ La revisión integral recorrió las siete fases de reproducción en una copia si
 entorno, descargas, modelos ni resultados previos. Descargó de nuevo el CSV de UCI
 con la misma huella SHA-256. Coincidieron las nueve tablas CSV, el contenido
 científico de siete JSON (excluyendo tiempos y huellas de archivos que incluyen
-tiempos) y las seis figuras byte a byte tras la fase `figuras`. Pasaron las cuatro
-pruebas, Ruff, formato y ty. Los modelos congelados conservaron sus huellas en
-ambas ejecuciones; no se modificó la selección original al reproducir el protocolo.
+tiempos) y las seis figuras byte a byte tras la fase `figuras`. Pasaron las once
+pruebas del modelo y del flujo, Ruff, formato y ty. Los modelos congelados
+conservaron sus huellas en ambas ejecuciones; no se modificó la selección
+original al reproducir el protocolo.
 
 Referencias técnicas consultadas:
 [OrderedModel y umbrales](https://www.statsmodels.org/stable/generated/statsmodels.miscmodels.ordinal_model.OrderedModel.transform_threshold_params.html),

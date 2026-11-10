@@ -2,6 +2,9 @@
 
 Universidad de Sonora · Semestre 2026-2 · Examen D.
 
+El contenido teórico y práctico y las bitácoras de decisiones fueron revisados
+personalmente por el autor.
+
 | Dato                 | Valor                                             |
 | -------------------- | ------------------------------------------------- |
 | Nombre               | Jesús Flores Lacarra                              |

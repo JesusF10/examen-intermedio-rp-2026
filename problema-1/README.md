@@ -1,6 +1,6 @@
 # Problema 1: Arcos de la circunferencia unitaria
 
-Parte práctica (a)–(d) implementada y ejecutada.
+Parte práctica (a)–(d) implementada, ejecutada y revisada por el autor.
 Semilla: 221201513.
 
 ## Código
@@ -15,8 +15,9 @@ Semilla: 221201513.
 ## Ejecución
 
 Trabajar desde la raíz con el entorno común de `pyproject.toml`.
-Preparar las dependencias con `uv sync --locked`. Las gráficas usan Matplotlib
-y la búsqueda de rejillas usa NumPy, ambos declarados en `pyproject.toml`.
+`uv run --locked` prepara las dependencias automáticamente; también se pueden
+instalar previamente con `uv sync --locked`. Las gráficas usan Matplotlib y la
+búsqueda de rejillas usa NumPy, ambos declarados en `pyproject.toml`.
 
 Para ejecutar todo el problema, incluidos los presupuestos completos y la
 sensibilidad de las rejillas, basta este comando desde la raíz:
@@ -34,7 +35,7 @@ individual; no hace falta copiarlos todos para reproducir el problema completo.
 
 La gráfica usa Matplotlib con el motor Agg, sin ventanas ni ejecutables gráficos
 externos. La biblioteca está declarada en `pyproject.toml` y sus versiones y
-dependencias transitivas están fijadas en `uv.lock`. Preparar el entorno:
+dependencias transitivas están fijadas en `uv.lock`. Instalación previa opcional:
 
 ```sh
 uv sync --locked
@@ -429,9 +430,9 @@ con Python 3.14.9 y dependencias instaladas desde `uv.lock`. Pasaron las 18 prue
 y todos los experimentos **completos**: cota, conteo, aprendizaje, precisión y
 rejillas con sensibilidad. Coincidieron las ocho tablas CSV, excluyendo columnas
 de tiempos, los parámetros científicos y las cuatro figuras byte a byte. La nueva
-ejecución completa de rejillas tardó 201.351 s; los tiempos varían con el equipo
-y la carga, sin cambiar los resultados. Esta comprobación amplía la revisión
-anterior mediante pruebas rápidas.
+ejecución completa de rejillas mediante la entrada común tardó 202.407 s;
+los tiempos varían con el equipo y la carga, sin cambiar los resultados.
+Esta comprobación incluyó todos los presupuestos del examen.
 No se requieren `docs/`, `informe/`, Gnuplot ni datos descargados para ejecutar
 los experimentos. Para repetir las comprobaciones del código desde la raíz:
 
@@ -499,4 +500,4 @@ Los resultados del conteo están documentados arriba y guardados en
 La precisión y las rejillas del seno también están documentadas, junto con la
 reflexión final. Todos los incisos prácticos tienen comandos, parámetros y
 resultados ejecutados. La bitácora del informe distingue los métodos utilizados
-de las propuestas de selección que se argumentan en la parte teórica.
+de los criterios de selección argumentados en la parte teórica.
