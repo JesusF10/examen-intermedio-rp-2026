@@ -18,6 +18,7 @@ examen-intermedio-rp-2026/
 ├── README.md                  # README
 ├── pyproject.toml             # Dependencias y versiones
 ├── uv.lock                    # Resolución exacta de dependencias
+├── ejecutar.py                # Ejecución completa y comprobaciones
 ├── .python-version            # Versión de Python
 ├── .gitignore                 # Gitignore
 ├── problema-1/                # código, resultados y README.md del problema 1
@@ -46,7 +47,7 @@ examen-intermedio-rp-2026/
 
 ---
 
-Instalación reproducible
+Instalación explícita del entorno (opcional; `uv run --locked` también lo prepara):
 
 ```sh
 uv sync --locked
@@ -55,12 +56,11 @@ uv sync --locked
 Comprobaciones:
 
 ```sh
-uv run --locked --directory problema-1 python -m unittest discover -s tests -v
-uv run --locked --directory problema-2 python -m unittest discover -s tests -v
-uv run --locked ruff check .
-uv run --locked ruff format --check .
-uv run --locked ty check
+uv run --locked python ejecutar.py comprobar
 ```
+
+Ejecuta las pruebas de ambos problemas, Ruff, formato y ty. Es una comprobación
+rápida; los experimentos completos se ejecutan con el comando siguiente.
 
 Aplicar formato:
 
@@ -70,31 +70,42 @@ uv run --locked ruff format .
 
 ## Reproducir resultados
 
-Desde la raíz, después de `uv sync --locked`:
+Desde la raíz, un solo comando prepara el entorno bloqueado y ejecuta ambos
+problemas con todos los parámetros y presupuestos del examen:
 
 ```sh
-uv run --locked python problema-1/src/cota.py
-uv run --locked python problema-1/src/conteo.py
-uv run --locked python problema-1/src/aprendizaje.py
-uv run --locked python problema-1/src/seno.py precision
-uv run --locked python problema-1/src/seno.py rejillas --sensibilidad
+uv run --locked python ejecutar.py
 ```
 
-Los parámetros, pruebas rápidas, resultados e interpretación están en
-[el README del problema 1](problema-1/README.md), cuya parte práctica está completa.
-Para reproducir el problema 2 en un clon limpio:
+Incluye el conteo exhaustivo, aprendizaje, precisión, rejillas con sensibilidad,
+descarga de UCI, verificación de gradientes y statsmodels, CV, evaluación final,
+diagnósticos y figuras. Tarda varios minutos, muestra el avance y se detiene
+si un paso falla. Las salidas se guardan en `problema-1/resultados/` y
+`problema-2/resultados/`. No depende de `docs/` ni del informe LaTeX.
+
+Para ejecutar únicamente un problema:
 
 ```sh
-uv run --locked python problema-2/ejecutar.py preparar
-uv run --locked python problema-2/ejecutar.py verificar
-uv run --locked python problema-2/ejecutar.py seleccionar
-uv run --locked python problema-2/ejecutar.py diagnostico
-uv run --locked python problema-2/ejecutar.py evaluar
-uv run --locked python problema-2/ejecutar.py diagnostico-final
-uv run --locked python problema-2/ejecutar.py figuras
+uv run --locked python ejecutar.py problema-1
+uv run --locked python ejecutar.py problema-2
 ```
 
-El [README del problema 2](problema-2/README.md) documenta la eliminación de
-duplicados, la reserva de prueba, el protocolo MAE, las verificaciones y los
-resultados. Los datos y modelos locales no se versionan. Tras evaluar, las fases
-de selección quedan bloqueadas en esa carpeta; no se reajusta usando prueba.
+El problema 1 vuelve a calcular sus experimentos. El problema 2 ejecuta todas las
+fases en una copia limpia. Si prueba ya está cerrada, verifica las huellas de
+modelos, selección y partición, conserva la evaluación y regenera las figuras.
+El flujo recupera el diagnóstico final tras una interrupción usando solo entrenamiento.
+No elimina marcadores ni vuelve a seleccionar o evaluar con prueba conocida.
+Para repetir desde cero el problema 2 se usa otra copia limpia del repositorio.
+
+El CSV de UCI se comprueba contra su SHA-256 fijado para impedir que un cambio
+en el origen altere silenciosamente los datos. No se versionan descargas ni modelos.
+Los parámetros, fases individuales, pruebas rápidas e interpretación están en
+[el README del problema 1](problema-1/README.md) y
+[el README del problema 2](problema-2/README.md).
+
+El comando único se verificó desde una copia sin entorno, datos ni resultados
+previos: completó ambos experimentos en 393.827 s en el equipo de revisión.
+Coincidieron las 17 tablas CSV salvo tiempos, el contenido científico de 11 JSON
+y las 10 figuras byte a byte con los resultados originales. Pasaron las 29
+pruebas, Ruff, formato y ty. Los tiempos y los últimos bits pueden variar con
+la plataforma; las limitaciones numéricas se explican en cada problema.

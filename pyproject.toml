@@ -37,4 +37,4 @@ python-version = "3.14"
 root = [".", "problema-1", "problema-1/src", "problema-2"]
 
 [tool.ty.src]
-include = ["problema-1/src", "problema-1/tests", "problema-2/src", "problema-2/tests", "problema-2/ejecutar.py"]
+include = ["ejecutar.py", "problema-1/src", "problema-1/tests", "problema-2/src", "problema-2/tests", "problema-2/ejecutar.py"]

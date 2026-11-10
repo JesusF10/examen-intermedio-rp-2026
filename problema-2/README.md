@@ -9,7 +9,24 @@ a=3, b=1, vino blanco.
 Desde la raíz, en un clon limpio, con Python 3.14.9 y uv:
 
 ```sh
-uv sync --locked
+uv run --locked python ejecutar.py problema-2
+```
+
+El entorno se prepara automáticamente con las versiones de `uv.lock`. La entrada
+ejecuta las siete fases en orden, muestra tiempos y se detiene si alguna falla.
+También se puede invocar directamente `uv run --locked python problema-2/ejecutar.py todo`.
+
+Si prueba ya está cerrada, se verifican las huellas de modelos, selección y
+partición y se regeneran las figuras, sin volver a seleccionar ni evaluar prueba.
+Un diagnóstico final interrumpido se completa solo con entrenamiento. Una
+evaluación de prueba incompleta o una huella alterada detiene el flujo; para una
+reproducción independiente desde cero se conserva esa carpeta y se usa otra copia
+limpia. `preparar` también impide sobrescribir una partición con prueba cerrada.
+
+Los mismos pasos se pueden ejecutar individualmente, en este orden, en una copia
+limpia (no es necesario repetirlos después del comando anterior):
+
+```sh
 uv run --locked python problema-2/ejecutar.py preparar
 uv run --locked python problema-2/ejecutar.py verificar
 uv run --locked python problema-2/ejecutar.py seleccionar
@@ -30,7 +47,7 @@ elegido por CV. Puede repetirse para dibujar desde las tablas, sin reajustar mod
 uv run --locked python problema-2/ejecutar.py figuras
 ```
 
-Pruebas rápidas del modelo, sin descargar ni ejecutar experimentos completos:
+Pruebas rápidas del modelo y del flujo, sin descargar ni ejecutar experimentos completos:
 
 ```sh
 uv run --locked --directory problema-2 python -m unittest discover -s tests -v
@@ -79,6 +96,7 @@ semilla 221201513:
 niveles.csv, particion.csv y datos-metadatos.json registran conteos, índices
 originales y SHA256. El CSV original tiene SHA256
 `76c3f809815c17c07212622f776311faeb31e87610d52c26d87d6e361b169836`.
+La descarga rechaza un CSV con una huella distinta antes de escribirlo.
 La prueba se reservó antes de ajustar. Sus conteos solo describen la estratificación.
 Todos los modelos usan los once atributos; los cuatro del diagnóstico no se usan
 para reentrenar ni seleccionar variables.
@@ -136,6 +154,9 @@ Verificaciones solo en entrenamiento, verificacion-ordinal.json:
 
 Cuatro pruebas automatizadas: gradientes para K=2,4,7, estabilidad con predictores
 extremos, orden, normalización, moda/mediana, redondeo y corrección PAVA.
+Otras siete verifican el orden y la detención del flujo, la repetición sin
+entrenar ni evaluar prueba, el diagnóstico final recuperable, las huellas, el
+cierre interrumpido, la protección de la partición y la versión descargada.
 
 ## (c) Comparación y prueba final única
 

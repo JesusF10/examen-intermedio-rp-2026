@@ -2,7 +2,7 @@
 
 import argparse
 
-from src import comparacion, datos, diagnostico, ordinal
+from src import comparacion, datos, diagnostico, flujo, ordinal
 from threadpoolctl import threadpool_limits
 
 
@@ -11,6 +11,7 @@ def main() -> None:
     parser.add_argument(
         "fase",
         choices=[
+            "todo",
             "inspeccionar",
             "preparar",
             "verificar",
@@ -23,6 +24,7 @@ def main() -> None:
     )
     args = parser.parse_args()
     acciones = {
+        "todo": flujo.ejecutar,
         "inspeccionar": datos.inspeccionar,
         "preparar": datos.preparar,
         "verificar": ordinal.main,

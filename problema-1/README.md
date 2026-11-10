@@ -18,6 +18,18 @@ Trabajar desde la raíz con el entorno común de `pyproject.toml`.
 Preparar las dependencias con `uv sync --locked`. Las gráficas usan Matplotlib
 y la búsqueda de rejillas usa NumPy, ambos declarados en `pyproject.toml`.
 
+Para ejecutar todo el problema, incluidos los presupuestos completos y la
+sensibilidad de las rejillas, basta este comando desde la raíz:
+
+```sh
+uv run --locked python ejecutar.py problema-1
+```
+
+`uv run --locked` crea el entorno si hace falta. La entrada común usa el mismo
+intérprete, ejecuta los cinco pasos en orden, muestra el avance y se detiene ante
+un error. Los comandos por inciso se conservan a continuación para ejecución
+individual; no hace falta copiarlos todos para reproducir el problema completo.
+
 ### Conteo de arcos: práctica (a)
 
 La gráfica usa Matplotlib con el motor Agg, sin ventanas ni ejecutables gráficos
@@ -74,7 +86,7 @@ sin depender de esa discretización. La versión de Python queda en los metadato
 En cada uno de los 1200 acomodos se evalúan **todas** las etiquetas con
 `itertools.product((-1, 1), repeat=n)`: 819000 evaluaciones en total. La fórmula
 `n*(n-1)+2` se usa solo como contraste posterior, no para sustituir la enumeración.
-El costo total es O(100 _ sum(2^n _ n log n, n=1..12)).
+El costo total es `O(100 * sum(2^n * n log n, n=1..12))`.
 
 Las rutas predeterminadas se resuelven desde el archivo del programa:
 

@@ -17,6 +17,7 @@ RAIZ = Path(__file__).resolve().parents[1]
 DATOS = RAIZ / "datos"
 RESULTADOS = RAIZ / "resultados"
 URL = "https://archive.ics.uci.edu/static/public/186/wine+quality.zip"
+SHA256_CSV = "76c3f809815c17c07212622f776311faeb31e87610d52c26d87d6e361b169836"
 
 
 def descargar() -> Path:
@@ -31,7 +32,15 @@ def descargar() -> Path:
     with ZipFile(archivo) as comprimido:
         for nombre in ("winequality-white.csv", "winequality.names"):
             entrada = next(n for n in comprimido.namelist() if n.endswith(nombre))
-            (DATOS / nombre).write_bytes(comprimido.read(entrada))
+            contenido = comprimido.read(entrada)
+            if (
+                nombre.endswith(".csv")
+                and hashlib.sha256(contenido).hexdigest() != SHA256_CSV
+            ):
+                raise RuntimeError(
+                    "El CSV de UCI no coincide con la versión del experimento."
+                )
+            (DATOS / nombre).write_bytes(contenido)
     return DATOS / "winequality-white.csv"
 
 
@@ -50,6 +59,10 @@ def inspeccionar() -> pd.DataFrame:
 
 
 def preparar() -> None:
+    if (DATOS / "test-evaluado.json").exists():
+        raise RuntimeError(
+            "Prueba ya cerrada: no se permite sobrescribir su partición."
+        )
     original = inspeccionar()
     # Decisión previa a la partición: cada perfil exactamente repetido cuenta una vez.
     sin_repetidos = original.drop_duplicates()
